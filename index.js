@@ -123,4 +123,11 @@ application.get('/fetch', async (
     );
 });
 
+application.get('/*', (
+    request,
+    response
+) => {
+    response.render('404');
+});
+
 application.listen(port);
