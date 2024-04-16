@@ -1,0 +1,38 @@
+body {
+    background-color: powderblue;
+    color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type='text'] {
+    padding: 8px;
+    font-size: 1em;
+}
+
+input[type='submit'] {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type='submit']:hover {
+    background-color: #45a049;
+}
