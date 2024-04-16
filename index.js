@@ -70,9 +70,9 @@ application.get('/fetch', async (
     };
 
     async function getFetchedProfileInformation (profileIdentifier) {
-        const information = await NobloxJS.getPlayerInfo(Number(profileIdentifier));
-
         try {
+            const information = await NobloxJS.getPlayerInfo(Number(profileIdentifier));
+
             return {
                 accountAge: information.age ?? 'Account age not specified',
                 description: information.blurb ?? 'No description added',
@@ -103,30 +103,25 @@ application.get('/fetch', async (
         };
     };
 
-    try {
-        const information = await getFetchedProfileInformation(identifier);
+    const information = await getFetchedProfileInformation(identifier);
 
-        response.render(
-            'fetch',
+        
+    response.render(
+        'fetch',
 
-            {
-                accountAge: formatNumber(Number(information.accountAge)),
-                description: information.description,
-                displayName: information.displayName,
-                followerCount: formatNumber(Number(information.followerCount)),
-                followingCount: formatNumber(Number(information.followingCount)),
-                friendCount: formatNumber(Number(information.friendCount)),
-                accountBanned: information.accountBanned,
-                joinDate: formatDate(new Date(information.joinDate)),
-                previousNames: information.previousNames,
-                username: information.username
-            }
-        );
-    } catch (error) {
-        console.error(error);
-
-        response.render('404');
-    };
+        {
+            accountAge: formatNumber(Number(information.accountAge)),
+            description: information.description,
+            displayName: information.displayName,
+            followerCount: formatNumber(Number(information.followerCount)),
+            followingCount: formatNumber(Number(information.followingCount)),
+            friendCount: formatNumber(Number(information.friendCount)),
+            accountBanned: information.accountBanned,
+            joinDate: formatDate(new Date(information.joinDate)),
+            previousNames: information.previousNames,
+            username: information.username
+        }
+    );
 });
 
 application.get('/*', (
