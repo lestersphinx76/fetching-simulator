@@ -103,24 +103,30 @@ application.get('/fetch', async (
         };
     };
 
-    const information = await getFetchedProfileInformation(identifier);
+    try {
+        const information = await getFetchedProfileInformation(identifier);
 
-    response.render(
-        'fetch',
+        response.render(
+            'fetch',
 
-        {
-            accountAge: formatNumber(Number(information.accountAge)),
-            description: information.description,
-            displayName: information.displayName,
-            followerCount: formatNumber(Number(information.followerCount)),
-            followingCount: formatNumber(Number(information.followingCount)),
-            friendCount: formatNumber(Number(information.friendCount)),
-            accountBanned: information.accountBanned,
-            joinDate: formatDate(new Date(information.joinDate)),
-            previousNames: information.previousNames,
-            username: information.username
-        }
-    );
+            {
+                accountAge: formatNumber(Number(information.accountAge)),
+                description: information.description,
+                displayName: information.displayName,
+                followerCount: formatNumber(Number(information.followerCount)),
+                followingCount: formatNumber(Number(information.followingCount)),
+                friendCount: formatNumber(Number(information.friendCount)),
+                accountBanned: information.accountBanned,
+                joinDate: formatDate(new Date(information.joinDate)),
+                previousNames: information.previousNames,
+                username: information.username
+            }
+        );
+    } catch (error) {
+        console.error(error);
+
+        response.render('404');
+    };
 });
 
 application.get('/*', (
