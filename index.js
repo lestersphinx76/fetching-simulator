@@ -8,7 +8,7 @@ const application = express();
 const port = process.env.PORT || 5000;
 
 (async () => {
-    await NobloxJS.setCookie(process.env.COOKIE);
+    await NobloxJS.setCookie(process.env.COOKIE || '');
 })();
 
 application.set(
