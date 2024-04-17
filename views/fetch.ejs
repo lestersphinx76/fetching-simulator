@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
     <head>
-        <title>Fetching Simulator</title>
+        <title><%= displayName %> (@<%= username %>) | Fetching Simulator</title>
         
         <link rel='stylesheet' href='/styles.css' />
         <link rel='stylesheet' href='/favicon.ico' />
@@ -25,7 +25,7 @@
             <p>Account Banned: <span style='color: red;'><%= accountBanned %></span></p>
             <p>Join Date: <span style='color: red;'><%= joinDate %></span></p>
             <p>Previous Names: <span style='color: red;'><%= previousNames %></span></p>
-            <p>Username: <span style='color: red;'><%= username %></span></p>
+            <p>Username: <span style='color: red;'>@<%= username %></span></p>
         </div>
     </body>
 </HTML>
