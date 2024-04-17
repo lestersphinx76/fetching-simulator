@@ -8,14 +8,16 @@
     </head>
     
     <body>
-        <h1>Fetching Simulator</h1>
-        <p>Fetch data from millions and billions of accounts created by users in Roblox.</p>
-        
-        <form action='/fetch' method='GET'>
-            <label for='identifier'>Roblox Identifier:</label>
-            <input type='text' id='username' name='identifier' placeholder='Enter Roblox identifier...' required />
+        <div class='container'>
+            <h1>Fetching Simulator</h1>
+            <p>Fetch data from millions and billions of accounts created by users in Roblox.</p>
             
-            <input type='submit' value='Fetch Profile Data' />
-        </form>
+            <form action='/fetch' method='GET'>
+                <label for='identifier'>Roblox Identifier:</label>
+                <input type='text' id='username' name='identifier' placeholder='Enter Roblox identifier...' required />
+                
+                <input type='submit' value='Fetch Profile Data' />
+            </form>
+        </div>
     </body>
 </HTML>
