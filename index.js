@@ -15,7 +15,7 @@ const usedFetchingSimulatorAccounts = [
 let currentAccount;
 
 (async () => {
-    currentAccount = await NobloxJS.setCookie(usedFetchingSimulatorAccounts[Math.floor(Math.random() * usedFetchingSimulatorAccounts.length]));
+    currentAccount = await NobloxJS.setCookie(usedFetchingSimulatorAccounts[Math.floor(Math.random() * usedFetchingSimulatorAccounts.length)]);
 })();
 
 application.set(
