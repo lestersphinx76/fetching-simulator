@@ -7,8 +7,15 @@ require('dotenv/config');
 const application = express();
 const port = process.env.PORT || 5000;
 
+const usedFetchingSimulatorAccounts = [
+    process.env.FIRST_ACCOUNT_COOKIE || '',
+    process.env.SECOND_ACCOUNT_COOKIE || ''
+];
+
+let currentAccount;
+
 (async () => {
-    await NobloxJS.setCookie(process.env.COOKIE || '');
+    currentAccount = await NobloxJS.setCookie(usedFetchingSimulatorAccounts[Math.floor(Math.random() * usedFetchingSimulatorAccounts.length]);
 })();
 
 application.set(
@@ -119,7 +126,8 @@ application.get('/fetch', async (
             accountBanned: information.accountBanned,
             joinDate: information.joinDate,
             previousNames: information.previousNames,
-            username: information.username
+            username: information.username,
+            usedFetchingSimulatorAccountName: currentAccount.UserName || 'Invalid account details'
         }
     );
 });
