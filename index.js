@@ -8,8 +8,8 @@ const application = express();
 const port = process.env.PORT || 5000;
 
 const usedFetchingSimulatorAccounts = [
-    process.env.FIRST_ACCOUNT_COOKIE || '',
-    process.env.SECOND_ACCOUNT_COOKIE || ''
+    process.env.FIRST_ACCOUNT_COOKIE || null,
+    process.env.SECOND_ACCOUNT_COOKIE || null
 ];
 
 let currentAccount;
