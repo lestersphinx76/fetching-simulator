@@ -9,7 +9,9 @@ const port = process.env.PORT || 5000;
 
 const usedFetchingSimulatorAccounts = [
     process.env.FIRST_ACCOUNT_COOKIE || null,
-    process.env.SECOND_ACCOUNT_COOKIE || null
+    process.env.SECOND_ACCOUNT_COOKIE || null,
+    process.env.THIRD_ACCOUNT_COOKIE || null,
+    process.env.FOURTH_ACCOUNT_COOKIE || null
 ];
 
 let currentAccount;
